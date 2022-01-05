@@ -1,0 +1,36 @@
+.table {
+  width: 80%;
+  padding: 10px;
+  margin: auto;
+}
+.search {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.search input {
+  border: 1px solid black;
+  outline: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.table table {
+  width: 100%;
+}
+
+.login {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+  background-color: #5ebd5e;
+  outline: none;
+}
+
+button.login:hover {
+  background-color: #6fcb6f;
+  color: #e1d2d2;
+}

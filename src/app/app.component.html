@@ -1,0 +1,86 @@
+<!-- <div class="account-list">
+  <button class="addAccount" (click)="openAddAccount()">Add Account</button>
+
+  <ng-container *ngIf="isOpenAddAccount">
+    <div class="add-account">
+      <button (click)="saveNew()">Save</button>
+    </div>
+    <input type="text" [(ngModel)]="selectedAccount!.firstname">
+  </ng-container>
+
+  <ng-container *ngIf="isOpenEditAccount">
+    <input type="text" [(ngModel)]="selectedAccount!.firstname">
+
+    <div class="add-account">
+      <button (click)="saveEdit()">Save</button>
+    </div>
+  </ng-container>
+
+  <div class="search">
+    <input class="inputSearch" type="text" [(ngModel)]="searchStr" (ngModelChange)="search()"
+    placeholder="Search">
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Balance</th>
+      <th>Thao tác</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let account of account; let index=index">
+      <td>{{account.firstname}} {{account.lastname}}</td>
+      <td>{{account.age}}</td>
+      <td>{{account.balance}}</td>
+      <td>
+        <button (click)="openEdit(account)">Sửa</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<!-- <ng-container *ngIf="isOpenAddAccount || isOpenEditAccount ">
+  <app-form-control
+  [selectedAccount]="selectedAccount"
+  (closeEvent)="close()"
+  (saveEvent)="saveEdit()"
+  (saveNewEvent)="saveNew()"
+  [isOpenAddAccount]="isOpenAddAccount"
+  [isOpenEditAccount]="isOpenEditAccount"
+  >
+ </app-form-control>
+</ng-container>
+
+
+<app-home
+[account]="account"
+[searchStr]="searchStr"
+(searchString)="search($event)"
+ (editEvent)="openEdit($event)"
+ (addEvent)="openAddAccount()"
+ (deleteEvent)="delete($event)"
+
+>
+</app-home> -->
+<nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <label class="logo" [routerLink]="['/']" >Angular Training</label>
+  <ul>
+    <li><a [routerLink]="['/home']" routerLinkActive="router-link-active"  class="menu-item active">Home</a></li>
+    <li><a class="menu-item" [routerLink]="['/add']" routerLinkActive="router-link-active">Add</a></li>
+    <li><a class="menu-item">Edit</a></li>
+    <li><a class="menu-item" [routerLink]="['/product']" routerLinkActive="router-link-active" >Product</a></li>
+    <li><a class="menu-item">Contact</a></li>
+    <li><a class="menu-item">Feedback</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+

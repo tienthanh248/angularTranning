@@ -1,0 +1,39 @@
+<div class="table">
+  <button class="login" (click)="login()">login</button>
+  <button class="logout" (click)="logout()">logout</button>
+  <div class="search">
+    <input type="text" placeholder="Search" [(ngModel)]="searchStr" (ngModelChange)="search($event)"/>
+    <button type="button" [routerLink]="['/add']" routerLinkActive="router-link-active"  class="btn btn-success" (click)="openAddAccount()">
+      &#10010; Add
+    </button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Blance</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th style="text-align: right">Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of account; let index = index">
+        <td>{{ account.firstname }} {{ account.lastname }}</td>
+        <td>{{ account.age }}</td>
+        <td>{{ account.balance }}</td>
+        <td>{{ account.address }}</td>
+        <td>{{ account.gender }}</td>
+        <td style="text-align: right">
+          <button type="button" [routerLink]="['/edit']" routerLinkActive="router-link-active"  class="btn btn-primary" (click)="openEdit(account)"
+          >
+            &#9999; Sửa</button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="delete(account)">
+            &#10005; Xóa
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
